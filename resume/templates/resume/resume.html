@@ -29,8 +29,19 @@
 <hr>
     <h3>Skills and Accomplishments</h3>
     <ul>
-        Skills: {{resume_detial.skill_split}} <br>
-        Accomplishments: {{resume_detial.accomplishments}} <br>
+        Skills:
+        {% for skill in resume_detial.skill_split %} 
+            <ul>
+            <li>{{skill}} </li>
+            </ul>
+        {% endfor %}
+        <br>
+        Accomplishments:
+        {% for accomp in resume_detial.accomplishment_split %} 
+            <ul>
+            <li>{{accomp}} </li>
+            </ul>
+        {% endfor %}
     </ul>
 <hr>
 </body>
