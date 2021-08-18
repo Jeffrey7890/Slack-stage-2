@@ -16,6 +16,9 @@ class Resume(models.Model):
 
     def skill_split(self):
         return self.skills.split(',')
+    
+     def accomplishment_split(self):
+        return self.accomplishments.split(',')
 
     def __str__(self):
         return self.full_name
