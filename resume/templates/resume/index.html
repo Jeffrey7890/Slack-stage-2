@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'resume/style.css' %}">
+    <link rel="stylesheet" href="{% static 'resume/bootstrap.min.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h2 class="btn-primary">Resume List</h2>
+
+
+    <a href="{% url 'resume:resume_form' %}"><button type="" class="btn btn-primary ">Add new resume</button></a>
+
+    {% if resume_list %}
+        {% for resume_name in resume_list %}
+            <h2><a href="{% url 'resume:detials' resume_name.id %}">{{resume_name.full_name}}'s</a>  resume</h2>
+        {% endfor %}
+
+    {% else %}
+        <h1>No Resume Available</h1>
+    {% endif %}
+</body>
+</html>
